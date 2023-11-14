@@ -1,14 +1,14 @@
-import DeployButton from "../components/DeployButton";
-import AuthButton from "../components/AuthButton";
-import { createClient } from "@/utils/supabase/server";
 import ConnectSupabaseSteps from "@/components/ConnectSupabaseSteps";
-import SignUpUserSteps from "@/components/SignUpUserSteps";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
-import { cookies } from "next/headers";
-import { Router } from "next/router";
 import Content from "@/components/Content";
 import ContentButton from "@/components/ContentButton";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
+import SignUpUserSteps from "@/components/SignUpUserSteps";
+import { createClient } from "@/utils/supabase/server";
+import { cookies } from "next/headers";
+import { Router } from "next/router";
+import AuthButton from "../components/AuthButton";
+import DeployButton from "../components/DeployButton";
 
 export default async function Index() {
   const cookieStore = cookies();
@@ -42,7 +42,6 @@ export default async function Index() {
           {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
         </main>
       </div> */}
-
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
           Powered by{" "}
