@@ -11,12 +11,12 @@ import AuthButton from "../components/AuthButton";
 import DeployButton from "../components/DeployButton";
 import getRiotApi from "@/components/sever/getRiotAPI";
 import { parseUrl } from "next/dist/shared/lib/router/utils/parse-url";
-import getSpotifyAccessToken from "@/components/sever/getSpotifyAccessToken";
+import getUserTopMusic from "@/components/sever/getUserTopMusic";
 
 export default async function Index() {
   const lolTier = await getRiotApi();
-  await getSpotifyAccessToken();
   const cookieStore = cookies();
+  const data = await getUserTopMusic();
 
   const canInitSupabaseClient = () => {
     // This function is just for the interactive tutorial.
