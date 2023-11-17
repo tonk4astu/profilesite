@@ -2,15 +2,20 @@ import ConnectSupabaseSteps from "@/components/ConnectSupabaseSteps";
 import Content from "@/components/Content";
 import ContentButton from "@/components/ContentButton";
 import Header from "@/components/Header";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/sever/Navbar";
 import SignUpUserSteps from "@/components/SignUpUserSteps";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { Router } from "next/router";
 import AuthButton from "../components/AuthButton";
 import DeployButton from "../components/DeployButton";
+import getRiotApi from "@/components/sever/getRiotAPI";
+import { parseUrl } from "next/dist/shared/lib/router/utils/parse-url";
+import getSpotifyAccessToken from "@/components/sever/getSpotifyAccessToken";
 
 export default async function Index() {
+  const lolTier = await getRiotApi();
+  await getSpotifyAccessToken();
   const cookieStore = cookies();
 
   const canInitSupabaseClient = () => {
@@ -34,7 +39,8 @@ export default async function Index() {
         </div> */}
       </nav>
       <ContentButton />
-      <Content />
+      <Content tier={lolTier} />
+
       {/* <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
         <Header />
         <main className="flex-1 flex flex-col gap-6">
@@ -44,15 +50,7 @@ export default async function Index() {
       </div> */}
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
-          Powered by{" "}
-          <a
-            href="https://supabase.com/?utm_source=create-next-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Supabase
-          </a>
+          <a href="https://github.com/tonk4astu">tonk4tsu</a>
         </p>
       </footer>
     </div>
