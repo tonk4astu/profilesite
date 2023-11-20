@@ -5,6 +5,7 @@ import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import getRiotApi from "@/components/server/getRiotAPI";
 import ContentContainer from "@/components/server/ContentContainer";
+import { Suspense } from "react";
 
 export default async function Index() {
   const lolTier = await getRiotApi();
@@ -41,7 +42,7 @@ export default async function Index() {
       </div> */}
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
-          <a href="https://github.com/tonk4astu">tonk4tsu</a>
+          <a href="https://github.com/tonk4tsu">tonk4tsu</a>
         </p>
       </footer>
     </div>
