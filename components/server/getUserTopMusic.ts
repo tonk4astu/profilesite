@@ -3,7 +3,7 @@ import access_token from "@/components/server/getSpotifyAccessToken";
 const accessToken = await access_token();
 export default async function getUserTopMusic() {
   const data: SpotifyData = await fetch(
-    `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=1`,
+    `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=50`,
     {
       method: "GET",
       headers: {

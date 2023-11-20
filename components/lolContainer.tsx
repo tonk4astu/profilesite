@@ -1,17 +1,16 @@
 import { DotGothic16 } from "@next/font/google";
+import getRiotApi from "@/components/server/getRiotAPI";
+const data = await getRiotApi();
 const Dots = DotGothic16({
   subsets: ["latin"],
   weight: "400",
   style: "normal",
 });
 
-type Props = {
-  tier?: string;
-};
-const lolContainer = (Props: Props) => {
+const lolContainer = () => {
   return (
     <div className={`${Dots.className} text-5xl`}>
-      <p>{Props.tier ? Props.tier : "un Rank"}</p>
+      <p>{data ? data : "un Rank"}</p>
     </div>
   );
 };
