@@ -1,22 +1,14 @@
-import ConnectSupabaseSteps from "@/components/ConnectSupabaseSteps";
-import Content from "@/components/Content";
+import Content from "@/components/lolContainer";
 import ContentButton from "@/components/ContentButton";
-import Header from "@/components/Header";
-import Navbar from "@/components/sever/Navbar";
-import SignUpUserSteps from "@/components/SignUpUserSteps";
+import Navbar from "@/components/server/Navbar";
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
-import { Router } from "next/router";
-import AuthButton from "../components/AuthButton";
-import DeployButton from "../components/DeployButton";
-import getRiotApi from "@/components/sever/getRiotAPI";
-import { parseUrl } from "next/dist/shared/lib/router/utils/parse-url";
-import getUserTopMusic from "@/components/sever/getUserTopMusic";
+import getRiotApi from "@/components/server/getRiotAPI";
+import ContentContainer from "@/components/server/ContentContainer";
 
 export default async function Index() {
   const lolTier = await getRiotApi();
   const cookieStore = cookies();
-  const data = await getUserTopMusic();
 
   const canInitSupabaseClient = () => {
     // This function is just for the interactive tutorial.
@@ -38,8 +30,7 @@ export default async function Index() {
           {isSupabaseConnected && <AuthButton />}
         </div> */}
       </nav>
-      <ContentButton />
-      <Content tier={lolTier} />
+      <ContentContainer />
 
       {/* <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
         <Header />

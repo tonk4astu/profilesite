@@ -35,7 +35,6 @@ const getAccessToken = async () => {
       return res.json();
     })
     .then((json) => {
-      console.log(json);
       return json;
     });
 
@@ -65,7 +64,6 @@ const getRefreshToken = async () => {
       return res.json();
     })
     .then((json) => {
-      console.log(json);
       return json;
     });
 };

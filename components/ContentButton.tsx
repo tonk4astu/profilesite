@@ -1,7 +1,7 @@
 "use client";
 import { useContentStore } from "@/app/store/store";
 
-const contentTab = () => {
+const ContentTab = () => {
   return (
     <div className="flex content-between">
       <TabButton title={"コンテンツ0"} contentType={"0"} />
@@ -10,7 +10,7 @@ const contentTab = () => {
     </div>
   );
 };
-export default contentTab;
+export default ContentTab;
 
 type TabButtonProps = {
   title: string;
