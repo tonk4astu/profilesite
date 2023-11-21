@@ -18,12 +18,17 @@ type TabButtonProps = {
 };
 
 const TabButton = (Props: TabButtonProps) => {
+  const setContentType = useContentStore((state) => state.setContent);
+  const contentType = useContentStore((state) => state.contentType);
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-    useContentStore.setState({ contentType: e.currentTarget.value });
+    setContentType(e.currentTarget.value);
   };
   return (
     <button
-      className="hover:bg-gray-800 p-3 rounded-md"
+      className={
+        "hover:bg-gray-800 p-3 rounded-md" +
+        (Props.contentType === contentType ? " bg-gray-800" : "")
+      }
       onClick={(e) => {
         clickHandler(e);
       }}
