@@ -42,7 +42,7 @@ export default async function Index() {
       </div> */}
       <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs">
         <p>
-          <a href="https://github.com/tonk4tsu">tonk4tsu</a>
+          <a href="https://github.com/tonk4tsu">Github</a>
         </p>
       </footer>
     </div>

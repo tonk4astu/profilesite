@@ -1,28 +1,19 @@
 import getUserTopMusic from "./getUserTopMusic";
-import Image from "next/image";
+import MusicCarousel from "../MusicCarousel";
 const userTopMusic = await getUserTopMusic();
 
-const MusicData = () => {
-  console.log(userTopMusic);
+export default function MusicData() {
   const data = userTopMusic.items.map((item) => {
-    return [
-      item.name,
-      item.artists[0].name,
-      item.album.name,
-      item.album.images[0].url,
-    ];
+    return (
+      <div className="">
+        <img className="max-w-xs max-h-xs" src={item.album.images[0].url} />
+        <div className="">
+          <p>{item.name}</p>
+          <p>{item.artists[0].name}</p>
+          <p>{item.album.name}</p>
+        </div>
+      </div>
+    );
   });
-  return data[0];
-};
-
-export default function MusicContainer() {
-  const [songName, artistName, albumName, albumImage] = MusicData();
-  return (
-    <div>
-      <img src={albumImage} />
-      <p>{songName}</p>
-      <p>{artistName}</p>
-      <p>{albumName}</p>
-    </div>
-  );
+  return <MusicCarousel data={data} />;
 }

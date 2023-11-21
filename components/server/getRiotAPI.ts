@@ -7,13 +7,14 @@ const getRiotApi = async () => {
     .then((res) => {
       if (!res.ok) {
         console.error(res);
-        throw new Error(`Error Status:${res.status}`);
       }
       return res.json();
     })
     .then((json) => {
       return json;
     });
-  return result[0].tier + " " + result[0].rank;
+  if (result.length >= 1) {
+    return result[0].tier + " " + result[0].rank;
+  }
 };
 export default getRiotApi;
