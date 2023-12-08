@@ -1,7 +1,6 @@
 "use client";
 import { DotGothic16 } from "next/font/google";
 import { useContentStore } from "@/app/store/store";
-import { JsxElement } from "typescript";
 const Dots = DotGothic16({
   subsets: ["latin"],
   weight: "400",

@@ -41,6 +41,4 @@ const Inputform = () => {
     </div>
   );
 };
-const submitHandler = () => {
-  "use server";
-};
+const submitHandler = () => {};
