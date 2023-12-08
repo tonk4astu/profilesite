@@ -1,5 +1,5 @@
 "use client";
-import { Bevan } from "@next/font/google";
+import { Bevan } from "next/font/google";
 import { useState } from "react";
 
 const bevan = Bevan({

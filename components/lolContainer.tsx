@@ -1,4 +1,4 @@
-import { DotGothic16 } from "@next/font/google";
+import { DotGothic16 } from "next/font/google";
 import getRiotApi from "@/components/server/getRiotAPI";
 const data = await getRiotApi();
 const Dots = DotGothic16({
