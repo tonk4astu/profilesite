@@ -22,13 +22,15 @@ export default function MusicContainer(props: MusicContainerProps) {
     return item;
   });
   return (
-    <button onClick={() => countUp()}>
-      <div className="flex flex-wrap justify-center">
-        <div className={"top-0 left-0 float-left text-3xl " + bevan.className}>
-          {count + 1}
-        </div>
-        {data[count]}
+    <div className="flex flex-wrap justify-center">
+      <div className={"top-0 left-0 float-left text-3xl " + bevan.className}>
+        {count + 1}
       </div>
-    </button>
+      {data[count]}
+
+      <button className="border border-zinc-700" onClick={() => countUp()}>
+        +1
+      </button>
+    </div>
   );
 }

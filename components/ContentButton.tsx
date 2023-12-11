@@ -4,7 +4,7 @@ import { useContentStore } from "@/app/store/store";
 const ContentTab = () => {
   return (
     <div className="flex content-between">
-      <TabButton title={"コンテンツ0"} contentType={"0"} />
+      <TabButton title={"プロフィール"} contentType={"0"} />
       <TabButton title={"一番聴いてる曲"} contentType={"1"} />
       <TabButton title={"現在のLoLランク"} contentType={"2"} />
     </div>
